@@ -3,10 +3,10 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head } from '@inertiajs/vue3';
 import { useInertia } from '../../utils/useInertia.js';
 
-const inertia = useInertia(); // Get the global Inertia instance
+const inertia = useInertia();
 
 const goToBabyDetails = () => {
-    inertia.visit('/baby-details'); // Use Inertia to navigate to the baby-details route
+    inertia.visit('/baby-details');
 };
 </script>
 

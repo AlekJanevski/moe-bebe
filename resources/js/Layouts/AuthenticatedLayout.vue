@@ -39,6 +39,13 @@ const showingNavigationDropdown = ref(false);
                                 >
                                     Dashboard
                                 </NavLink>
+
+                                <NavLink
+                                    :href="route('baby-details')"
+                                    :active="route().current('baby-details')"
+                                >
+                                    Детали за вашето бебе
+                                </NavLink>
                             </div>
                         </div>
 

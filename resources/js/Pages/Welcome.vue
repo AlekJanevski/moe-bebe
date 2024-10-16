@@ -1,5 +1,5 @@
 <script setup>
-import { Head, Link } from '@inertiajs/vue3';
+import { Head, Link } from "@inertiajs/vue3";
 
 defineProps({
     canLogin: {
@@ -19,10 +19,10 @@ defineProps({
 });
 
 function handleImageError() {
-    document.getElementById('screenshot-container')?.classList.add('!hidden');
-    document.getElementById('docs-card')?.classList.add('!row-span-1');
-    document.getElementById('docs-card-content')?.classList.add('!flex-row');
-    document.getElementById('background')?.classList.add('!hidden');
+    document.getElementById("screenshot-container")?.classList.add("!hidden");
+    document.getElementById("docs-card")?.classList.add("!row-span-1");
+    document.getElementById("docs-card-content")?.classList.add("!flex-row");
+    document.getElementById("background")?.classList.add("!hidden");
 }
 </script>
 
@@ -32,11 +32,14 @@ function handleImageError() {
         <div
             class="relative h-screen flex min-h-screen flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white"
         >
-            <div class="relative w-full h-full flex flex-col justify-between">
+            <div class="relative flex flex-col justify-between w-full h-full">
                 <header
-                    class="grid grid-cols-2 items-center gap-2 py-10 lg:grid-cols-3"
+                    class="grid items-center grid-cols-2 gap-2 py-10 lg:grid-cols-3"
                 >
-                    <nav v-if="canLogin" class="-mx-3 flex flex-1 justify-center">
+                    <nav
+                        v-if="canLogin"
+                        class="flex justify-center flex-1 -mx-3"
+                    >
                         <Link
                             v-if="$page.props.auth.user"
                             :href="route('dashboard')"
@@ -50,7 +53,7 @@ function handleImageError() {
                                 :href="route('login')"
                                 class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
                             >
-                                Log in
+                                Логирај се
                             </Link>
 
                             <Link
@@ -58,20 +61,18 @@ function handleImageError() {
                                 :href="route('register')"
                                 class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
                             >
-                                Register
+                                Регистрирај се
                             </Link>
                         </template>
                     </nav>
                 </header>
 
-                <main class="mt-6 p-24">
-                    <div class="w-full text-center">
-                        Добредојдовте на МоеБебе!
-                    </div>
+                <main class="p-24 mt-6">
+                    <div class="w-full text-center">Добредојдe на МоеБебе!</div>
                 </main>
 
                 <footer
-                    class="py-16 text-center text-sm text-black dark:text-white/70"
+                    class="py-16 text-sm text-center text-black dark:text-white/70"
                 >
                     МоеБебе @2024
                 </footer>

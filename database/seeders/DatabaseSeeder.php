@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\PatientBaby;
+use App\Models\PatientParent;
 use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -16,8 +17,18 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
 
         User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+            'name' => 'Алек Јаневски',
+            'email' => 'alekjanevski@gmail.com',
         ]);
+
+        $this->call([
+            PatientParentSeeder::class,
+            PatientBabySeeder::class,
+        ]);
+
+        // Attach relationships
+        $parent = PatientParent::first();
+        $child = PatientBaby::first();
+        $parent->children()->attach($child->id);
     }
 }

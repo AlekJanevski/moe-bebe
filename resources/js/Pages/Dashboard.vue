@@ -4,10 +4,6 @@ import { Head } from '@inertiajs/vue3';
 import { useInertia } from '../../utils/useInertia.js';
 
 const inertia = useInertia();
-
-const goToBabyDetails = () => {
-    inertia.visit('/baby-details');
-};
 </script>
 
 <template>
@@ -31,7 +27,7 @@ const goToBabyDetails = () => {
                                     Тука ќе можете да ги погледнете сите ажурирани детали околу вашете бебе
                                 </h2>
                                 <div class="mt-5 h-full flex flex-col justify-end items-end">
-                                    <button @click="goToBabyDetails" class="w-full bg-blue-600 text-white font-montserrat py-2 px-8 font-medium rounded-md hover:bg-blue-500 transition-all duration-300">Понатаму</button>
+                                    <a :href="route('baby-details')" class="w-full bg-blue-600 text-white font-montserrat py-2 px-8 font-medium rounded-md hover:bg-blue-500 transition-all duration-300 text-center">Понатаму</a>
                                 </div>
                             </div>
 
@@ -43,7 +39,7 @@ const goToBabyDetails = () => {
                                     Тука можете да закажете термин во дозволеното време на болницата
                                 </h2>
                                 <div class="mt-5 h-full flex flex-col justify-end items-end">
-                                    <button class="w-full bg-blue-600 text-white font-montserrat py-2 px-8 font-medium rounded-md hover:bg-blue-500 transition-all duration-300">Понатаму</button>
+                                    <a :href="route('calendar')" class="w-full bg-blue-600 text-white font-montserrat py-2 px-8 font-medium rounded-md hover:bg-blue-500 transition-all duration-300 text-center">Понатаму</a>
                                 </div>
                             </div>
 

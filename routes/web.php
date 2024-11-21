@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CalendarController;
 use App\Http\Controllers\PatientBabyController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
@@ -19,9 +20,13 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/baby-details', [PatientBabyController::class, 'showBabyDetails'])
+Route::get('/dashboard/baby-details', [PatientBabyController::class, 'showBabyDetails'])
     ->middleware(['auth'])
     ->name('baby-details');
+
+Route::get('/dashboard/calendar', [CalendarController::class, 'getBabyDetails'])
+    ->middleware(['auth'])
+    ->name('calendar');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

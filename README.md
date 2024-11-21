@@ -1,7 +1,7 @@
-<<<<<<< HEAD
+
 # moe-bebe
-=======
-## Tech used
+
+## Tech stack
 
 -   Laravel
 -   VueJS 3
@@ -17,4 +17,3 @@
 -   if not, run `nvm use node`
 -   in a new tab -> `npm run dev`
 -   open localhost in browser
->>>>>>> development

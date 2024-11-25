@@ -7,28 +7,13 @@ defineProps({
     },
     canRegister: {
         type: Boolean,
-    },
-    laravelVersion: {
-        type: String,
-        required: true,
-    },
-    phpVersion: {
-        type: String,
-        required: true,
-    },
+    }
 });
-
-function handleImageError() {
-    document.getElementById("screenshot-container")?.classList.add("!hidden");
-    document.getElementById("docs-card")?.classList.add("!row-span-1");
-    document.getElementById("docs-card-content")?.classList.add("!flex-row");
-    document.getElementById("background")?.classList.add("!hidden");
-}
 </script>
 
 <template>
-    <Head title="Welcome" />
-    <div class="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
+    <Head title="Добредојде" />
+    <div class="bg-gray-50 text-black/50">
         <div
             class="relative h-screen flex min-h-screen flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white"
         >
@@ -38,28 +23,28 @@ function handleImageError() {
                 >
                     <nav
                         v-if="canLogin"
-                        class="flex justify-center flex-1 -mx-3"
+                        class="flex justify-start flex-1 -mx-3 px-8"
                     >
                         <Link
                             v-if="$page.props.auth.user"
                             :href="route('dashboard')"
-                            class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
+                            class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20]"
                         >
-                            Dashboard
+                            Панел
                         </Link>
 
                         <template v-else>
                             <Link
                                 :href="route('login')"
-                                class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
+                                class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20]"
                             >
-                                Логирај се
+                                Најава
                             </Link>
 
                             <Link
                                 v-if="canRegister"
                                 :href="route('register')"
-                                class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
+                                class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20]"
                             >
                                 Регистрирај се
                             </Link>
@@ -67,12 +52,14 @@ function handleImageError() {
                     </nav>
                 </header>
 
-                <main class="p-24 mt-6">
-                    <div class="w-full text-center">Добредојдe на МоеБебе!</div>
+                <main class="px-24 flex flex-row">
+                    <div class="w-full flex items-center justify-center">
+                        <img src="../../img/logo.svg" alt="logo" class="" />
+                    </div>
                 </main>
 
                 <footer
-                    class="py-16 text-sm text-center text-black dark:text-white/70"
+                    class="py-16 text-sm text-center text-black"
                 >
                     МоеБебе @2024
                 </footer>

@@ -1,3 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    body {
+        @apply font-noir;
+    }
+}
+
+/* Global styles */
+html, body, #app {
+    height: 100%;
+}
+
+.welcome-title {
+    font-size: 60px;
+    margin-bottom: 82px;
+}
+
+.welcome-subtitle {
+    font-size: 32px;
+    margin-bottom: 18px;
+}
+
+.main-button {
+    margin-top: 82px;
+}

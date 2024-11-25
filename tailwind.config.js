@@ -13,7 +13,14 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                noir: ['Noir Pro', ...defaultTheme.fontFamily.sans],
+            },
+            colors: {
+                secondary: '#A7C1EB',
+                link: '#01A3D6',
+            },
+            backgroundImage: {
+                'primary-gradient': 'linear-gradient(to bottom, #A7C1EB, #ffffff)',
             },
         },
     },

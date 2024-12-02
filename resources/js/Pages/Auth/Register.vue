@@ -8,7 +8,8 @@ import { Head, Link, useForm } from '@inertiajs/vue3';
 
 const form = useForm({
     name: '',
-    babyName: '',
+    baby_name: '',
+    baby_reference_id: '',
     email: '',
     password: '',
     password_confirmation: '',
@@ -53,19 +54,35 @@ const submit = () => {
                     </div>
 
                     <div class="mt-4">
-                        <InputLabel for="babyName" value="Име на бебе" />
+                        <InputLabel for="baby_name" value="Име на бебе" />
 
                         <TextInput
-                            id="babyName"
+                            id="baby_name"
                             type="text"
                             class="mt-1 block w-full"
-                            v-model="form.babyName"
+                            v-model="form.baby_name"
                             required
                             autofocus
-                            autocomplete="babyName"
+                            autocomplete="baby_name"
                         />
 
-                        <InputError class="mt-2" :message="form.errors.babyName" />
+                        <InputError class="mt-2" :message="form.errors.baby_name" />
+                    </div>
+
+                    <div class="mt-4">
+                        <InputLabel for="baby_reference_id" value="Референтен број" />
+
+                        <TextInput
+                            id="baby_reference_id"
+                            type="text"
+                            class="mt-1 block w-full"
+                            v-model="form.baby_reference_id"
+                            required
+                            autofocus
+                            autocomplete="baby_reference_id"
+                        />
+
+                        <InputError class="mt-2" :message="form.errors.baby_reference_id" />
                     </div>
 
                     <div class="mt-4">
@@ -143,3 +160,9 @@ const submit = () => {
         </div>
     </div>
 </template>
+
+<style scoped>
+.welcome-title {
+    margin-bottom: 32px;
+}
+</style>

@@ -12,7 +12,7 @@ const showingNavigationDropdown = ref(false);
 
 <template>
     <div>
-        <div class="min-h-screen bg-gray-100">
+        <div class="min-h-screen bg-secondary">
             <nav
                 class="border-b border-gray-100 bg-white"
             >
@@ -190,9 +190,15 @@ const showingNavigationDropdown = ref(false);
             </header>
 
             <!-- Page Content -->
-            <main>
+            <main class="main-wrapper">
                 <slot />
             </main>
         </div>
     </div>
 </template>
+
+<style scoped>
+.main-wrapper {
+    height: calc(100vh - 65px);
+}
+</style>
